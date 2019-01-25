@@ -1,0 +1,32 @@
+{
+  "name": "jotr",
+  "version": "0.5.1",
+  "description": "jotr is a cli-based tool for taking quick notes. The notes are stored in YAML format for easy migration and manual editing.",
+  "main": "index.js",
+  "bin": {
+    "jotr": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakash/jotr.git"
+  },
+  "keywords": [
+    "cli",
+    "notes",
+    "jotting"
+  ],
+  "author": "Morten Olsrud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hakash/jotr/issues"
+  },
+  "homepage": "https://github.com/hakash/jotr#readme",
+  "dependencies": {
+    "js-yaml": "^3.12.1",
+    "tiny-cli-editor": "^0.1.1",
+    "yargs": "^12.0.5"
+  }
+}

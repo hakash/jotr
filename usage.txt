@@ -1,0 +1,16 @@
+Use jotr to "jot down" tagged notes (a jot). Default launches a terminal editor. Use Ctrl+D to save, Ctrl+C to exit without saving.
+
+If no tags are given, the jot will be tagged with "Random".
+
+If you don't want to use the built-in editor you can use the flag '-c' to add your jot directly in the command line. Use '--' to mark the end of the jot if you need to palce more flags or arguments behind it. Otherwise it runs to the end.
+
+Use '-g' to search the jots for a specific term.
+
+Use '-l' to print the jots to the terminal. Supply tags to print jots with specific tags. Also here, use '--' to mark the end of your list if you need to end it before the end of the terminal input.
+
+Use '--export' to export the data to a given filename. Supports JSON and YAML based on the file extension.
+
+Usage: 
+  $0 [tags] [-c one-liner jot] [--debug]
+  $0 -g <term> [--debug]
+  $0 -l [tags] [--debug]
