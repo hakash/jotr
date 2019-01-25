@@ -145,14 +145,20 @@ if(args.content){
 	jot.saveJots(tags, args.content.join(' '));
 }
 else if(typeof args.list == 'object'){
-	let output = jot.getJots(yargs.list);
+	let output = jot.getJots(args.list);
 
-	if(output.trim() == '{}'){
+	if(output == '' && args.list.length == 0){
 		console.log('No jots yet! Try using \'jotr -c My first jot!\' to add that jot with the \'Random\' tag.');
 		return;
 	}
 
-	console.log('Your jots %s:', args.list.length > 0 ? 'tagged with ' + args.list.join(', '):'so far');
+	if(output == '' && args.list.length > 0){
+		console.log('No jots whith the given tag(s) yet!');
+		console.log('Try using \'jotr %s -c A tagged jot!\' to add that jot with the tag(s): %s', args.list.join(' '), args.list.join(' '));
+		return;
+	}
+
+	console.log('Your jots %s:', args.list.length > 0 ? 'tagged with ' + args.list.join(', ') : 'so far');
 	console.log(output);
 }
 else if(args.grep){

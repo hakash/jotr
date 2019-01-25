@@ -49,13 +49,14 @@ class Jot {
 
 		let yamlString = yaml.safeDump(this.content);
 		this.log(yamlString);
-		fs.writeFileSync(this.jotFile,yamlString);
+	
+		this.saveRaw( yamlString);
 	}
 
 	loadJots() {
 		this.log('[loadJots] loading jots');
 		try {
-			var doc = yaml.safeLoad(fs.readFileSync(this.jotFile, 'utf8'));
+			var doc = yaml.safeLoad(this.getRaw());
 			
 			this.log('[loadJots] loaded data:', doc);
 			
@@ -68,42 +69,70 @@ class Jot {
 			return this.content;
 		} 
 		catch (e) {
-			this.log('[loadJots] There was a problem reading the file. It seems to be corrupted in some way. Run "jotr --list --debug" to display the error message', {level:LOGLEVEL.INFO});
+			this.log('[loadJots] There was a problem interpreting the file. It seems to be corrupted in some way. Run "jotr --list --debug" to display the error message.', {level:LOGLEVEL.INFO});
 			this.log('[loadJots] Error message:', e);
 			process.exit(1);
 		}
 	}
 
 	getRaw(){
-		return fs.readFileSync( this.jotFile, 'utf8');
+		try {
+			return fs.readFileSync( this.jotFile, 'utf8');
+		}
+		catch(e){
+			this.log('There was en error reading the file %s. Make sure the file exists and that you have the correct permissions. If you want more details run the command again with the flag "--debug".', this.jotFile, {level:LOGLEVEL.INFO});
+			this.log('[getRaw] Error:', e);
+		}
 	}
 
-	saveRaw(raw){
-		fs.writeFileSync(this.jotFile,raw);
+	saveRaw(raw, file = this.jotFile){
+		try {
+			fs.writeFileSync( file ,raw);
+		}
+		catch(e){
+			this.log('An error ocurred writing to %s. Please try again with "--debug" if you want to see the error details.', file, {level:LOGLEVEL.INFO});
+			this.log('[saveRaw] Error:', e);
+		}
 	}
 
 	getJots(tags){
-		this.log('[getJots] Function called with tag:',tags);
+		this.log('[getJots] Function called with tags:',tags);
+
+		if(tags && typeof tags == 'string'){
+			tags = [tags];
+		}
+
 		if(!tags || tags.length == 0){
 			this.log('[getJots] No tags supplied to getJots, returning all jots.');
 
 			let buffer = yaml.safeDump(this.content);
 			this.log('[getJots] Yaml dump: %s Type: %s', buffer, typeof buffer);
 
+			if(buffer.trim() == '{}'){
+				buffer = '';
+			}
+	
 			return buffer;
 		}
 
 		let buffer = {};
-		for( let tag in Object.keys(tags)){
+		for( let tag of tags){
 			this.log('[getJots] Checking for tag %s in this.content', tag);
 			if(this.content[tag]){
-				this.log('[getJots] Found tag "%s" with content: ', this.content[tag]);
+				this.log('[getJots] Found tag "%s" with content: %s', tag, this.content[tag]);
 				buffer[tag] = this.content[tag];
 			}
 		}
-		let output = yaml.safeDump(buffer);
+		let output = yaml.safeDump(buffer).trim();
+		if(output.trim() == '{}'){
+			output = '';
+		}
 		this.log('[getJots] Outputting',output);
 		return output;
+	}
+
+	getTags(){
+
 	}
 
 	exportJotsToFile(file){
@@ -122,13 +151,7 @@ class Jot {
 			process.exit(1);
 		}
 
-		try {
-			fs.writeFileSync(file, output);
-		}
-		catch(e){
-			this.log('An error occurred writing to the given file. Please check permissions. Run the command again with "--debug" to see the full error message.', {level:LOGLEVEL.INFO});
-			this.log('[exportJotsToFile]',e,{level:LOGLEVEL.DEBUG});
-		}
+		this.writeRaw(output, file);
 	}
 
 	grepJots(term){
