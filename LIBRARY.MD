@@ -1,5 +1,7 @@
 # Using jotr in your own project
 
+**[HOME](README.MD)**
+
 If you want to use the core of jotr in your own project, you can. There's really nothing much to it, but nothing warms our hearts more than if you find some value in it.
 
 To include it in your project, you need to require the `Jot.js` file, not the `index.js` file, as the latter one deals with the cli directly, and is not made to be used externally, as of now at least.

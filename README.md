@@ -1,5 +1,7 @@
 # Welcome to _jotr_
 
+**[LIBRARY](LIBRARY.MD)**
+
 _Jot down your ideas, thoughts and notes, whitout leaving the terminal._
 
 >**_TLDR:_**
@@ -114,3 +116,7 @@ Here you will find `jots.yml`. If you remove it, it will be re-created without t
 - Add support for configuring the default behaviour
 - Add terminal coloring
 - Replace or improve the built-in editor to be more intuitive
+
+## API, using the core in you own project
+
+If you are curious about the API of the core parts of jotr, take a look [here](LIBRARY.MD)
