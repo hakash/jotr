@@ -1,13 +1,22 @@
 # Welcome to _jotr_
 
-**[LIBRARY](LIBRARY.MD)**
+**[LIBRARY](./LIBRARY.MD)**
 
 _Jot down your ideas, thoughts and notes, whitout leaving the terminal._
 
->**_TLDR:_**
+>### **TLDR:**
+>
+>**Install:**
+>```sh
+>npm i jotr -g
+>```
+>
+>**Usage:**
+>
 > To get started, simply write `jotr` in your terminal to start the editor. Use `Ctrl+D` to save and exit, `Ctrl+C` to exit without saving.
 >
 >See your jot using `jotr -l`
+
 
 ## Requirements
 
