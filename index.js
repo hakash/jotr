@@ -40,7 +40,7 @@ if(!fs.existsSync(jotrPath + filename)){
 }
 
 // Load the long help text
-var usage = fs.readFileSync('usage.txt','utf8');
+var usage = fs.readFileSync(__dirname + '/usage.txt','utf8');
 
 // Load the module
 const yargs = require('yargs');
