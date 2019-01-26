@@ -19,7 +19,6 @@ _Jot down your ideas, thoughts and notes, whitout leaving the terminal._
 >
 >See your jot using `jotr -l`
 
-
 ## Requirements
 
 Currently only *nix systems are supported, so if you're on Windows, you need to use WSL (Windows subsystem for Linux), Vagrant, a Linux-based container or a Linux emulator to be able to use the tool.
