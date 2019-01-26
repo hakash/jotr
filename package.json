@@ -1,6 +1,6 @@
 {
   "name": "jotr",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "jotr is a cli-based tool for taking quick notes. The notes are stored in YAML format for easy migration and manual editing.",
   "main": "index.js",
   "bin": {
