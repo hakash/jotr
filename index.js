@@ -12,7 +12,7 @@ const fs = require('fs');
 const editor = require('tiny-cli-editor');
 const Jot = require('./Jot.js');
 
-let jotrPath = process.env.JOTR_HOME = process.env.HOME + '/.jotr/';
+let jotrPath = process.env.JOTR_HOME = require('os').homedir() + '/.jotr/';
 let filename = process.env.JOTR_DATA_FILE = 'jots.yml';
 
 /**
