@@ -1,6 +1,6 @@
 # Using jotr in your own project
 
-**[HOME](./README.MD)**
+**[HOME](https://github.com/hakash/jotr)**
 
 If you want to use the core of jotr in your own project, you can. There's really nothing much to it, but nothing warms our hearts more than if you find some value in it.
 
