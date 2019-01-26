@@ -1,5 +1,7 @@
 # Welcome to _jotr_
 
+**[LIBRARY](LIBRARY.MD)**
+
 _Jot down your ideas, thoughts and notes, whitout leaving the terminal._
 
 >**_TLDR:_**
@@ -75,7 +77,7 @@ Although jots are made to be remembered, sometimes you need to edit or remove on
 jotr --edit
 ```
 
-> **_Beware!_** This opens the entire YAML-file for editing, so be careful not to create syntax errors in the YAML-format. This will render the file unreadable by jotr until the error is fixed. 
+> **_Beware!_** This opens the entire YAML-file for editing, so be careful not to create syntax errors in the YAML-format. This will render the file unreadable by jotr until the error is fixed.
 >
 >Use `jotr -l --debug` to assist you in pinpointing the error, or load the data file into an editor like VS Code (or online service) to use YAML-linting.
 
@@ -105,9 +107,7 @@ jotr saves all jots in a YAML-file located in a sub-folder in the user's home fo
 cd ~/.jotr
 ```
 
-Here you will find `jots.yml`. If you ever want to have a back-up of your jots, you add it to git or what ever your heart pleases. If you remove it, it will be re-created without the old data.
-
-On first run of the tool, jotr will try to create these.
+Here you will find `jots.yml`. If you remove it, it will be re-created without the old data as the tool will try to create both the file and the directory on each run, if they do not exist.
 
 ## Roadmap - in no particular order
 
@@ -116,3 +116,7 @@ On first run of the tool, jotr will try to create these.
 - Add support for configuring the default behaviour
 - Add terminal coloring
 - Replace or improve the built-in editor to be more intuitive
+
+## API, using the core in you own project
+
+If you are curious about the API of the core parts of jotr, take a look [here](LIBRARY.MD)

@@ -96,6 +96,14 @@ yargs.option('l',{
 	group: 'Show data:'
 });
 
+// Add the option for outputting the tags in use
+yargs.option('t',{
+	alias:'tags',
+	describe:'Dump tags to the terminal.',
+	type: 'boolean',
+	group: 'Show data:'
+});
+
 // Add the option for enabling debug output as jotr runs
 yargs.option('debug',{
 	describe: 'Enable debug output',
@@ -111,11 +119,12 @@ yargs.option('purge',{
 
 // Configure which flags conflics
 yargs.conflicts({
-	'c':		['g','l','export','edit','purge'],
-	'g':		['l','export','edit','purge'],
-	'l':		['export','edit','purge'],
-	'export':	['edit','purge'],
-	'edit':	 	['purge']
+	'c':		['g','l','export','edit','purge', 't'],
+	'g':		['l','export','edit','purge', 't'],
+	'l':		['export','edit','purge', 't'],
+	'export':	['edit','purge', 't'],
+	'edit':	 	['purge', 't'],
+	'purge': 	['t'],
 });
 
 // Done setting up
@@ -164,6 +173,10 @@ else if(typeof args.list == 'object'){
 else if(args.grep){
 	let output = jot.grepJots(args.grep);
 	console.log('Your jots matching', args.grep);
+	console.log(output);
+}
+else if(args.tags){
+	let output = jot.getTags().join('\n');
 	console.log(output);
 }
 else if(args.edit){
