@@ -1,5 +1,7 @@
 # Welcome to _jotr_
 
+[![Build Status](https://travis-ci.org/hakash/jotr.svg?branch=master)](https://travis-ci.org/hakash/jotr)
+
 **[LIBRARY](./LIBRARY.MD)**
 
 _Jot down your ideas, thoughts and notes, whitout leaving the terminal._
