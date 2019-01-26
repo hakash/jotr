@@ -1,6 +1,9 @@
 # Welcome to _jotr_
 
 [![Build Status](https://travis-ci.org/hakash/jotr.svg?branch=master)](https://travis-ci.org/hakash/jotr)
+[![Node version](https://img.shields.io/node/v/jotr.svg?style=flat)](http://nodejs.org/download/) [![npm version](https://badge.fury.io/js/jotr.svg)](https://badge.fury.io/js/jotr) 
+
+[![https://nodei.co/npm/jotr.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/jotr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/jotr)
 
 **[LIBRARY](./LIBRARY.MD)**
 
@@ -21,9 +24,7 @@ _Jot down your ideas, thoughts and notes, whitout leaving the terminal._
 
 ## Requirements
 
-Currently only *nix systems are supported, so if you're on Windows, you need to use WSL (Windows subsystem for Linux), Vagrant, a Linux-based container or a Linux emulator to be able to use the tool.
-
-_**Contributors are welcome to assist in making this universally available.**_
+All three major platforms are supported, but with limited ability to test equally on all platforms, some platform specific bugs might occur.
 
 ## Adding jots
 
@@ -121,12 +122,14 @@ Here you will find `jots.yml`. If you remove it, it will be re-created without t
 
 ## Roadmap - in no particular order
 
-- Add support for Windows
 - Add support for syncing with an online service
 - Add support for configuring the default behaviour
 - Add terminal coloring
-- Replace or improve the built-in editor to be more intuitive
+- Replace or improve the built-in editor to be more intuitive and support basic fetures like cutting and pasting.
+- Split packgage into jotr-cli and jotr-core, to get ready for other modules.
+- Make CLI-parts into a module, runnable from CLI, and also importable in ohter packages.
+- Tests!!!
 
-## API, using the core in you own project
+## API - using the core in you own project
 
-If you are curious about the API of the core parts of jotr, take a look [here](LIBRARY.MD)
+If you are curious about the API of the core parts of jotr, take a look [here](./LIBRARY.MD). Note that the core only handles the reading and writing of data. The CLI-parts are, as of yet at least, not exportable.
