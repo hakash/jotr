@@ -160,10 +160,11 @@ class Jot {
 		this.log('[grepJots] Entries:',entries);
 
 		let buffer = entries.reduce( (collector, entry) => { 
-			let [key, value] = entry; 
+			let key = entry[0];
+			let value = entry[1].pop(); 
 
 			if(value.toLowerCase().indexOf(term) >= 0) {
-
+				this.log('[grepJots] Collector so far:', collector);
 				if(!collector[key]){
 					collector[key] = [];
 				}
@@ -171,6 +172,8 @@ class Jot {
 				collector[key].push(value);
 				return collector; 
 			}
+
+			return collector;
 		},{});
 		this.log('[grepJots] Grepped jots:',buffer);
 		
