@@ -132,7 +132,7 @@ class Jot {
 	}
 
 	getTags(){
-
+		return Object.keys(this.content);
 	}
 
 	exportJotsToFile(file){
