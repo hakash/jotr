@@ -9,8 +9,14 @@
  * Initial setup
  */
 const fs = require('fs');
-const editor = require('termit');
+const termit = require('termit');
 const Jot = require('./Jot.js');
+
+let termitOptions = {
+	disableOpen: true,
+	disableSaveAs: true
+};
+const term = new termit(termitOptions);
 
 let jotrPath = process.env.JOTR_HOME = require('os').homedir() + '/.jotr/';
 let filename = process.env.JOTR_DATA_FILE = 'jots.yml';
