@@ -61,7 +61,7 @@ class Jot {
 			this.log('[loadJots] loaded data:', doc);
 			
 			if(!doc){ 
-				this.log('[loadJots] Empty doc loaded. Setting defult...');
+				this.log('[loadJots] Empty doc loaded. Setting default...');
 				doc = {};
 			}
 

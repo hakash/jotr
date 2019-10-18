@@ -8,7 +8,7 @@ To include it in your project, you need to require the `Jot.js` file, not the `i
 
 This will give you access to the reading and writing of jots to and from a file of your choosing.
 
-## Contruction
+## Construction
 
 The constructor takes exactly one parameter, the file to work with.
 
@@ -25,7 +25,7 @@ The Jot-class provides several methods for getting data from the file and from t
 
 >### **getRaw()** : _String_
 
-This method just reads the YAML-file anr returns the content as a string. The file it reads is the one suplied when the instance was created.
+This method just reads the YAML-file anr returns the content as a string. The file it reads is the one supplied when the instance was created.
 
 >### **loadJots()** : _Object_
 
@@ -61,7 +61,7 @@ This method adds the given jot to the given tags before saving the data to the Y
 
 >### **exportJotsToFile( \<file\> )**
 
-This method lets you export the data to a file of your choosing. It supports both JSON and YAML, and determins the format based on the file extension given.
+This method lets you export the data to a file of your choosing. It supports both JSON and YAML, and determines the format based on the file extension given.
 
 ## A note on debugging
 
@@ -84,8 +84,8 @@ Apart from the optional last parameter, the method just pipes the arguments thro
 ```javascript
 ...
 let character = {
-    hitpoints: 50,
-    level:20,
+    hitPoints: 50,
+    level:2,
     name:'Jotr, the barbarian'
 };
 

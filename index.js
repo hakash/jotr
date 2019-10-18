@@ -9,7 +9,7 @@
  * Initial setup
  */
 const fs = require('fs');
-const editor = require('tiny-cli-editor');
+const editor = require('termit');
 const Jot = require('./Jot.js');
 
 let jotrPath = process.env.JOTR_HOME = require('os').homedir() + '/.jotr/';
@@ -117,7 +117,7 @@ yargs.option('purge',{
 	group: 'Dangerzone:'
 });
 
-// Configure which flags conflics
+// Configure which flags conflicts
 yargs.conflicts({
 	'c':		['g','l','export','edit','purge', 't'],
 	'g':		['l','export','edit','purge', 't'],
@@ -162,7 +162,7 @@ else if(typeof args.list == 'object'){
 	}
 
 	if(output == '' && args.list.length > 0){
-		console.log('No jots whith the given tag(s) yet!');
+		console.log('No jots with the given tag(s) yet!');
 		console.log('Try using \'jotr %s -c A tagged jot!\' to add that jot with the tag(s): %s', args.list.join(' '), args.list.join(' '));
 		return;
 	}
