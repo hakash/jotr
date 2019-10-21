@@ -16,7 +16,7 @@ _Jot down your ideas, thoughts and notes, without leaving the terminal._
 >
 >*Usage:*
 >
-> To get started, simply write `jotr` in your terminal to start the editor. Use `Ctrl+D` to save and exit, `Ctrl+C` to exit without saving.
+> To get started, simply write `jotr` in your terminal to start the editor. Use `Ctrl+S` to save and exit, `Ctrl+C` to exit without saving.
 >
 >See your jot using `jotr -l`
 
