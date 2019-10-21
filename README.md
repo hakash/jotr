@@ -56,7 +56,7 @@ For multi-line jots, you need to use the editor:
 jotr javascript scope assignment
 ```
 
-This clears the terminal window, presenting you with an empty space to write your heart out. Use `Ctrl+D` to save your jot. To cancel, just use `Ctrl+C`.
+This clears the terminal window, presenting you with an empty space to write your heart out. Use `Ctrl+S` to save your jot. To cancel, just use `Ctrl+C`.
 
 ## Listing and searching through the jots
 
