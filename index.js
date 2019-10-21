@@ -183,6 +183,7 @@ else if(args.grep){
 }
 else if(args.tags){
 	let output = jot.getTags().join('\n');
+	console.log('The tags currently registered:');
 	console.log(output);
 }
 else if(args.edit){
