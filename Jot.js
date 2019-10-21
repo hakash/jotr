@@ -151,7 +151,7 @@ class Jot {
 			process.exit(1);
 		}
 
-		this.writeRaw(output, file);
+		this.saveRaw(output, file);
 	}
 
 	grepJots(term){
