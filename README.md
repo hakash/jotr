@@ -122,9 +122,9 @@ Here you will find `jots.yml`. If you remove it, it will be re-created without t
 
 - Add support for configuring the default behavior
 - Add terminal coloring
-- Replace or improve the built-in editor to be more intuitive and support basic features like cutting and pasting.
 - Split package into jotr-cli and jotr-core, to get ready for other modules.
 - Make CLI-parts into a module, runnable from CLI, and also importable in other packages.
+- Support different contexts / multiple backing files
 - Tests!!!
 
 ## API - using the core in you own project
