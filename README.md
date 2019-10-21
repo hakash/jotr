@@ -1,22 +1,20 @@
 # Welcome to _jotr_
 
 [![Build Status](https://travis-ci.org/hakash/jotr.svg?branch=master)](https://travis-ci.org/hakash/jotr)
-[![Node version](https://img.shields.io/node/v/jotr.svg?style=flat)](http://nodejs.org/download/) [![npm version](https://badge.fury.io/js/jotr.svg)](https://badge.fury.io/js/jotr) 
+[![Node version](https://img.shields.io/node/v/jotr.svg?style=flat)](http://nodejs.org/download/) [![npm version](https://badge.fury.io/js/jotr.svg)](https://badge.fury.io/js/jotr)
 
 [![https://nodei.co/npm/jotr.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/jotr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/jotr)
 
-**[LIBRARY](./LIBRARY.MD)**
+_Jot down your ideas, thoughts and notes, without leaving the terminal._
 
-_Jot down your ideas, thoughts and notes, whitout leaving the terminal._
-
->### **TLDR:**
+>**TLDR:**
 >
->**Install:**
+>*Install:*
 >```sh
 >npm i jotr -g
 >```
 >
->**Usage:**
+>*Usage:*
 >
 > To get started, simply write `jotr` in your terminal to start the editor. Use `Ctrl+D` to save and exit, `Ctrl+C` to exit without saving.
 >
@@ -122,12 +120,11 @@ Here you will find `jots.yml`. If you remove it, it will be re-created without t
 
 ## Roadmap - in no particular order
 
-- Add support for syncing with an online service
-- Add support for configuring the default behaviour
+- Add support for configuring the default behavior
 - Add terminal coloring
-- Replace or improve the built-in editor to be more intuitive and support basic fetures like cutting and pasting.
-- Split packgage into jotr-cli and jotr-core, to get ready for other modules.
-- Make CLI-parts into a module, runnable from CLI, and also importable in ohter packages.
+- Replace or improve the built-in editor to be more intuitive and support basic features like cutting and pasting.
+- Split package into jotr-cli and jotr-core, to get ready for other modules.
+- Make CLI-parts into a module, runnable from CLI, and also importable in other packages.
 - Tests!!!
 
 ## API - using the core in you own project
