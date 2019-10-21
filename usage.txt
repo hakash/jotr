@@ -1,8 +1,8 @@
-Use jotr to "jot down" tagged notes (a jot). Default launches a terminal editor. Use Ctrl+D to save, Ctrl+C to exit without saving.
+Use jotr to "jot down" tagged notes (a jot). Default launches a terminal editor. Use Ctrl+S to save, Ctrl+C to exit without saving.
 
 If no tags are given, the jot will be tagged with "Random".
 
-If you don't want to use the built-in editor you can use the flag '-c' to add your jot directly in the command line. Use '--' to mark the end of the jot if you need to palce more flags or arguments behind it. Otherwise it runs to the end.
+If you don't want to use the built-in editor you can use the flag '-c' to add your jot directly in the command line. Use '--' to mark the end of the jot if you need to place more flags or arguments behind it. Otherwise it runs to the end.
 
 Use '-g' to search the jots for a specific term.
 
