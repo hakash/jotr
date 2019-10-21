@@ -9,14 +9,14 @@
  * Initial setup
  */
 const fs = require('fs');
-const termit = require('termit');
+const Termit = require('termit');
 const Jot = require('./Jot.js');
 
 let termitOptions = {
 	disableOpen: true,
 	disableSaveAs: true
 };
-const term = new termit(termitOptions);
+const termit = new Termit(termitOptions);
 
 let jotrPath = process.env.JOTR_HOME = require('os').homedir() + '/.jotr/';
 let filename = process.env.JOTR_DATA_FILE = 'jots.yml';
@@ -186,9 +186,7 @@ else if(args.tags){
 	console.log(output);
 }
 else if(args.edit){
-	editor(jot.getRaw())
-		.on('submit',(content) => jot.saveRaw(content) )
-		.on('abort', () => process.exit(1));
+	termit.init(jotrPath + filename);
 }
 else if(args.purge){
 	const rl = require('readline').createInterface({
@@ -208,7 +206,9 @@ else if(args.export){
 	jot.exportJotsToFile(args.export);
 }
 else {
-	editor('')
-		.on('submit',(content) => jot.saveJots(tags, content) )
-		.on('abort', () => process.exit(1));
+	termit.addPreSaveHook( () => {
+		termit.unload();
+		jot.saveJots(tags, termit.getText());
+	});
+	termit.init();
 }
